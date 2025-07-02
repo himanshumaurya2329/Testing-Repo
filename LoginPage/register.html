@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="CSS/register.css">
+  <style>
+    #reg
+    {
+      text-decoration: underline blue 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="theme">
+    <p >Dark</p>
+    <button >Change Theme</button>
+  </div>
+  <br>
+  <div id="box">
+      <a href="register.html" id="reg">Registration</a> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+      <a href="login.html" id="log">Log In </a>
+      <br><br>
+      <div id="innerbox">
+        <form id="register-form">
+          <label for="name">Name</label><br>
+          <input id="name" type="text"><br><br>
+
+          <label for="email">Email</label><br>
+          <input id="email" type="email"><br><br>
+
+          <label for="gender">Gender</label><br>
+          <select name="gender" id="gender">
+            <option value="" selected>--Select--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Others</option>
+          </select><br><br>
+
+          <label for="password">Password</label><br>
+          <input id="password" type="password"><br><br>
+
+          <label for="re-password">Confirm Password</label><br>
+          <input id="re-password" type="password"><br><br>
+          <button id="register">Submit</button>
+        </form>
+      </div>
+  </div>
+
+  <script src="Js/app1.js"></script>
+</body>
+</html>

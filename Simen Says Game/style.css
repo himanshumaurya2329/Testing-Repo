@@ -1,0 +1,69 @@
+body
+{
+    text-align: center;
+    background-color: bisque;
+}
+
+.box-container
+{
+    width : 60%;
+    display: flex;
+    justify-content: center;
+    margin : auto;
+    border: 5px solid black;
+    border-radius: 50px 50px;
+}
+
+.btn
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    border: 2px solid black;
+    margin: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease;
+}
+.btn:hover
+{
+    box-shadow: 2px 2px 5px  black;
+}
+.btn p
+{
+    padding-top : 70px;
+}
+
+.red
+{
+    background-color: rgb(218, 94, 94);
+}
+
+.purple
+{
+    background-color: rgb(218, 68, 218);
+}
+
+.yellow
+{
+    background-color: rgb(220, 220, 94);
+}
+
+.blue
+{
+    background-color: rgb(76, 76, 225);
+}
+
+.game-flash
+{
+    background-color: white;
+}
+
+.user-flash
+{
+    background-color: rgb(16, 207, 16);
+}
+
+.body-flash
+{
+    background-color: red;
+}

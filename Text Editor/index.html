@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <style>
+        body
+        {
+            background-color: rgb(215, 163, 64);
+            text-align: center;
+        }
+        textarea
+        {
+            height : 100px;
+            width : 60%;
+            background-color: rgb(167, 210, 213);
+            box-shadow: 2px 2px  15px red;
+        }
+        #showpara
+        {
+            margin: auto;
+            border : 1px solid black;
+            height : 100px;
+            width : 60%;
+            background-color: rgb(167, 210, 213);
+            box-shadow: 2px 2px  15px rgb(25, 66, 11);
+        }
+        button
+        {
+            width : 130px;
+            height : 30px;
+            border : none;
+            border-radius: 10px;
+            background-color: rgb(148, 220, 115);
+        }
+    </style>
+</head>
+<body>
+    <h1>This is a Text Editor</h1>
+    
+    <div>
+        <h3>Type your text here</h3>
+        <textarea id="txt" placeholder="Write Something ......"></textarea><br><br>
+        <button id="bold"> Bold </button>
+        <button id="italic"> Italic </button>
+        <button id="underline"> Underline </button>
+        <button id="charclr"> Chnage text color </button>
+        <button id="bgclr"> Change Bg color </button>
+    </div>
+    <h3>Your message appears here</h3>
+    <div id="showpara"> 
+        <p id="show"></p>
+    </div>
+
+    <!--  js added here -->
+    <script>
+        let msgbox = document.querySelector('#txt');
+        let showbox = document.querySelector('#show');
+
+        msgbox.addEventListener("keydown" , function() {
+            let message = msgbox.value;
+            showbox.innerText = message;
+        });
+
+        let boldbtn = document.querySelector('#bold');
+        boldbtn.addEventListener('click' , function() {
+            message = msgbox.value;
+            message = `<b>${message.replace(/\n/g, "<br>")}</b>`;
+            showbox.innerHTML = message;
+        });
+
+        let italicbtn = document.querySelector('#italic');
+        italicbtn.addEventListener('click' , function() {
+            message = msgbox.value;
+            message = `<i>${message.replace(/\n/g, "<br>")}</i>`;
+            showbox.innerHTML = message;
+        })
+
+        let underlinebtn = document.querySelector('#underline');
+        underlinebtn.addEventListener('click' , function() {
+            message = msgbox.value;
+            message = `<u>${message.replace(/\n/g, "<br>")}</u>`;
+            showbox.innerHTML = message;
+        });
+
+        let text_clr_btn = document.querySelector('#charclr');
+        text_clr_btn.addEventListener('click' , function() {
+            showbox.style.color = getRandomColor();
+        })
+
+        let bg_color_btn = document.querySelector('#bgclr');
+        bg_color_btn.addEventListener('click' , function() {
+            let divBox = document.querySelector('#showpara');
+            divBox.style.backgroundColor = getRandomColor();
+        })
+
+        function getRandomColor()
+        {
+            let red = Math.floor(Math.random()* 255);
+            let blue = Math.floor(Math.random()* 255);
+            let green = Math.floor(Math.random()* 255);
+
+            color = `rgb(${red}, ${green}, ${blue})`;
+            return color;
+        }
+    </script>
+</body>
+</html>
